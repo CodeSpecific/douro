@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/CodeSpecific/douro/infra/algo"
 )
 
@@ -15,6 +13,4 @@ func main() {
 		remainAmount -= curAmount
 		sumAmount += curAmount
 	}
-	fmt.Println()
-	fmt.Println(sumAmount)
 }

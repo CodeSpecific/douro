@@ -14,7 +14,7 @@ func TestRandomValue(t *testing.T) {
 		sumAmount += curAmount
 	}
 	if sumAmount == amount {
-		t.Log("测试通过了")
+		t.Log("测试通过")
 	} else {
 		t.Errorf("测试失败,输出结果为:%d,预期结果为:%d", sumAmount, amount)
 	}
