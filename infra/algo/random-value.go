@@ -13,7 +13,7 @@ func init() {
 }
 
 /*
- * 随机数算法，只是简单实现业务逻辑，不考虑是否分配均匀
+ * RandomValue 随机数算法，只是简单实现业务逻辑，不考虑是否分配均匀
  */
 func RandomValue(remainCount, remainAmount int) int {
 	if remainCount == 1 {
