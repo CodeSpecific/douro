@@ -2,6 +2,8 @@ package algo
 
 import (
 	"testing"
+
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestRandomValue(t *testing.T) {
@@ -13,9 +15,8 @@ func TestRandomValue(t *testing.T) {
 		remainAmount -= curAmount
 		sumAmount += curAmount
 	}
-	if sumAmount == amount {
-		t.Log("测试通过")
-	} else {
-		t.Errorf("测试失败,输出结果为:%d,预期结果为:%d", sumAmount, amount)
-	}
+
+	Convey("compare a and b is equal", t, func() {
+		So(sumAmount, ShouldEqual, amount)
+	})
 }
