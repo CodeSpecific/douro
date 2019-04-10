@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
+
 )
 
 func TestRandomValue(t *testing.T) {
@@ -16,7 +17,7 @@ func TestRandomValue(t *testing.T) {
 		sumAmount += curAmount
 	}
 
-	Convey("compare a and b is equal", t, func() {
+	Convey("compare target value if equal source value", t, func() {
 		So(sumAmount, ShouldEqual, amount)
 	})
 }
