@@ -23,4 +23,5 @@
 
 ### FAQ
 *Q*: 无法访问类似于`golang.org/x/tools`这样的依赖包，怎么办?
+
 *A*: 系统使用`Go Module`管理依赖，当运行`build/run`的时候，没有科学上网会出现类似于`golang.org/x/tools`无法访问到的情况，建议配置`GoProxy (https://goproxy.io)`
