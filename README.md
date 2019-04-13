@@ -13,8 +13,6 @@
 ### 开发框架
 
 - [ ] Web开发框架：https://github.com/kataras/iris
-- [ ] Api开发框架：https://github.com/gin-gonic/gin
-- [ ] Api文档框架：https://github.com/swaggo/gin-swagger
 - [ ] 日志框架：https://github.com/sirupsen/logrus
 - [ ] 验证框架：https://github.com/go-playground/validator
 - [ ] ORM框架：https://github.com/go-xorm/xorm
