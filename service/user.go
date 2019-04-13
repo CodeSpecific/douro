@@ -1,6 +1,6 @@
 package service
 
-//DTO User
+//BO User
 type User struct {
 	ID    uint
 	Name  string
