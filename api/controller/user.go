@@ -2,6 +2,7 @@ package controller
 
 import (
 	"github.com/CodeSpecific/douro/api/controller/internal"
+	"github.com/CodeSpecific/douro/api/model"
 	"github.com/CodeSpecific/douro/service"
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/hero"
@@ -18,9 +19,9 @@ func (c *userController) initRoute() {
 	c.Get("/user/{id:uint}", hero.Handler(c.getUser))
 }
 
-func (c *userController) getUser(id uint) service.User {
+func (c *userController) getUser(id uint) *model.UserViewModel {
 	user, _ := c.GetUser(id)
-	return user
+	return model.ConvertUserViewModel(user)
 }
 
 func registerUserController(app *iris.Application) {
