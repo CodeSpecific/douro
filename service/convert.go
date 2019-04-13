@@ -19,14 +19,9 @@ func convertToUser(profile *entity.User_Profile, auth *entity.User_Auth) *User {
 		user.ThirdPartyID = profile.Third_Party_ID
 		user.CreateTime = profile.Create_Time
 
-		//类型断言并进行强制转换
-		if gender, ok := interface{}(profile.Gender).(Gender); ok {
-			user.Gender = gender
-		}
-
-		if mode, ok := interface{}(profile.Register_Mode).(RegisterMode); ok {
-			user.RegisterMode = mode
-		}
+		//强制类型转换
+		user.Gender = Gender(profile.Gender)
+		user.RegisterMode = RegisterMode(profile.Register_Mode)
 	}
 
 	if auth != nil {

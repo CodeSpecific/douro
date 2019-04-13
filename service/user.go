@@ -7,20 +7,20 @@ import (
 )
 
 // Gender 性别枚举
-type Gender uint
+type Gender int
 
 const (
-	保密 Gender = iota
-	男
-	女
+	Unknown Gender = iota
+	Male
+	Female
 )
 
 // RegisterMode 注册渠道
-type RegisterMode uint
+type RegisterMode int
 
 const (
-	电话 RegisterMode = iota
-	微信
+	Phone RegisterMode = iota
+	WeiXin
 )
 
 // User (BO)用户业务对象
