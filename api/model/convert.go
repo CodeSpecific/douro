@@ -2,7 +2,7 @@ package model
 
 import "github.com/CodeSpecific/douro/service"
 
-// convertUserViewModel 转换业务对象User为ViewModel
+// ConvertUserViewModel 转换业务对象User为ViewModel
 func ConvertUserViewModel(user *service.User) *UserViewModel {
 	if user == nil {
 		return nil
