@@ -45,8 +45,14 @@ type userService struct {
 }
 
 func (s *userService) GetUser(id uint) (*User, error) {
-	profile := s.GetUserProfile(id)
-	auth := s.GetUserAuth(id)
+	profile, err := s.GetUserProfile(id)
+	if err != nil {
+		return nil, err
+	}
+	auth, err := s.GetUserAuth(id)
+	if err != nil {
+		return nil, err
+	}
 	user := convertToUser(profile, auth)
 	return user, nil
 }

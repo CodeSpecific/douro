@@ -20,7 +20,10 @@ func (c *userController) initRoute() {
 }
 
 func (c *userController) getUser(id uint) *model.UserViewModel {
-	user, _ := c.GetUser(id)
+	user, err := c.GetUser(id)
+	if err != nil {
+		panic(err)
+	}
 	return model.ConvertUserViewModel(user)
 }
 
