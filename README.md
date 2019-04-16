@@ -20,7 +20,7 @@
 - [ ] 日志框架：https://github.com/sirupsen/logrus
 - [ ] 验证框架：https://github.com/go-playground/validator
 - [ ] ORM框架：https://github.com/go-xorm/xorm
-- [ ] 配置文件框架：https://github.com/rickar/props
+- [ ] 配置文件框架：https://github.com/go-ini/ini
 - [ ] 自动化测试框架：https://github.com/smartystreets/goconvey
 
 ### FAQ
