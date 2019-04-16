@@ -22,7 +22,7 @@ func (c *userController) initRoute() {
 func (c *userController) getUser(id uint) *model.UserViewModel {
 	user, err := c.GetUser(id)
 	if err != nil {
-		panic(err)
+		return &model.UserViewModel{Name: err.Error()}
 	}
 	return model.ConvertUserViewModel(user)
 }
