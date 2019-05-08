@@ -8,12 +8,14 @@ import (
 	"github.com/kataras/iris/hero"
 )
 
+// userController 用户控制器
 type userController struct {
 	*iris.Application
 	service.UserService
 	internal.Controller
 }
 
+// initRoute 初始化用户相关的路由
 func (c *userController) initRoute() {
 	//参数依赖注入,通过hero包实现
 	c.Get("/user/{id:uint}", hero.Handler(c.getUser))
