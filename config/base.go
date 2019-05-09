@@ -1,9 +1,6 @@
 package config
 
 import (
-	"fmt"
-	"os"
-
 	"github.com/go-ini/ini"
 )
 
@@ -15,20 +12,20 @@ type Config interface {
 
 type iniConfig struct {
 	f            *ini.File
-	DbConnectStr string
+	dbConnectStr string
 }
 
 func (c *iniConfig) GetDbConnectStr() string {
-	return c.f.Section("mysql").Key("connectStr").String()
+	return c.dbConnectStr
 }
 
 func (c *iniConfig) init() *iniConfig {
 	var err error
 	c.f, err = ini.Load("config/douro.ini")
 	if err != nil {
-		fmt.Printf("Fail to read file: %v", err)
-		os.Exit(1)
+		panic(err)
 	}
+	c.dbConnectStr = c.f.Section("mysql").Key("connectStr").String()
 	return c
 }
 
