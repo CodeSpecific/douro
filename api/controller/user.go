@@ -21,12 +21,12 @@ func (c *userController) initRoute() {
 	c.Get("/user/{id:uint}", hero.Handler(c.getUser))
 }
 
-func (c *userController) getUser(id uint) *model.UserViewModel {
+func (c *userController) getUser(id uint) interface{} {
 	user, err := c.GetUser(id)
 	if err != nil {
-		return &model.UserViewModel{Name: err.Error()}
+		return model.ResponseCommonModel.Error("30001",err.Error())
 	}
-	return model.ConvertUserViewModel(user)
+	return model.ResponseCommonModel.Success(user)
 }
 
 func registerUserController(app *iris.Application) {
