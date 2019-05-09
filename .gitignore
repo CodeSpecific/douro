@@ -12,3 +12,4 @@
 *.out
 
 config/douro.ini
+.vscode
