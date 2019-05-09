@@ -12,6 +12,7 @@ type Starter interface {
 	Stop(StarterContext)
 }
 
+// 判断是BaseStarter是否实现了接口Starter，以帮助在程序编译的时候检查
 var _ Starter=new(BaseStarter)
 
 // BaseStarter 基础启动器

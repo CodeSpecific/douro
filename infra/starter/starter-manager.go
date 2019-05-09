@@ -17,7 +17,7 @@ func (m *starterManager) GetAllStarters()[]Starter{
 
 // Run 运行所有的启动器
 func(m *starterManager)Run(){
-	var starterContext = make(map[string]interface{})
+	var starterContext = make(StarterContext)
 	//初始化所有的启动器
 	for _,starter:=range m.Starters{
 		starter.Init(starterContext)

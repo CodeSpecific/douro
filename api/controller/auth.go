@@ -18,6 +18,7 @@ func(auth *authController)initRoute(){
 }
 
 func(auth *authController)getOtp(phone string)interface{}{
+	// 防御性编程：判断变量是否有效
 	// 1.这里需要对每次的调用进行时间限制，例如一分钟
 	// 2.使用redis存储电话号码和随机数，并设置过期时间为1分钟
 	// opt 匿名结构体对象 
