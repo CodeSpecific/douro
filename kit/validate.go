@@ -2,8 +2,12 @@ package kit
 
 import "regexp"
 
-// Validate 全局的验证变量
-var Validate = validate{}
+// Validate 全局的验证变量,使用初始化形式，防止被外部修改
+var Validate validate
+
+func init() {
+	Validate = validate{}
+}
 
 type validate struct{}
 
