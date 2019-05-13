@@ -24,7 +24,7 @@ func (c *userController) initRoute() {
 func (c *userController) getUser(id uint) interface{} {
 	user, err := c.GetUser(id)
 	if err != nil {
-		return model.ResponseCommonModel.Error("30001",err.Error())
+		return model.ResponseCommonModel.Error(err.Error())
 	}
 	return model.ResponseCommonModel.Success(user)
 }
